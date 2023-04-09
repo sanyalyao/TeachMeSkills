@@ -5,13 +5,13 @@
         static void Main()
         {
             Task_0();
-            //Task_1();
-            //Task_2();
-            //Task_3();
-            //Task_4();
-            //Task_5();
-            //Task_6();
-            //Task_7();
+            Task_1();
+            Task_2();
+            Task_3();
+            Task_4();
+            Task_5();
+            Task_6();
+            Task_7();
         }
 
         /// <summary>
@@ -35,6 +35,7 @@
                 Console.WriteLine($"Your number {inputNumber} does not exist in the array");
             }
         }
+
         /// <summary>
         /// Создайте массив целых чисел. Удалите все вхождения заданного числа из массива. Пусть число задается с консоли.Если такого числа нет - выведите сообщения об этом. В результате должен быть новый массив без указанного числа.  
         /// </summary>
@@ -58,6 +59,7 @@
                 Console.WriteLine($"Your number {numberToDelete} does not exist in the array");
             }
         }
+
         /// <summary>
         /// Создайте и заполните массив случайным числами и выведете максимальное, минимальное и среднее значение. Для генерации случайного числа используйте метод Random() .  Пусть будет возможность создавать массив произвольного размера.Пусть размер массива вводится с консоли.
         /// </summary>
@@ -74,12 +76,15 @@
         {
             int[] numbers = new int[length];
             Random random = new Random();
+
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = random.Next();
             }
+
             return numbers;
         }
+
         /// <summary>
         /// Создайте 2 массива из 5 чисел. Выведите массивы на консоль в двух отдельных строках. Посчитайте среднее арифметическое элементов каждого массива и сообщите, для какого из массивов это значение оказалось больше (либо сообщите, что их средние арифметические равны).  
         /// </summary>
@@ -96,6 +101,7 @@
         {
             double averageFirstArray = firstArray.Average();
             double averageSecondArray = secondArray.Average();
+
             if (averageFirstArray > averageSecondArray)
             {
                 Console.WriteLine($"\nThe average result of the second array = {averageSecondArray}");
@@ -111,6 +117,7 @@
                 Console.WriteLine($"\nThe average results of both arrays are equal");
             }
         }
+
         /// <summary>
         /// Создайте массив и заполните массив. Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль. Снова выведете массив на экран на отдельной строке. 
         /// </summary>
@@ -130,8 +137,10 @@
                     numbers[i] = 0;
                 }
             }
+
             return numbers;
         }
+
         /// <summary>
         /// Создайте массив строк. Заполните его произвольными именами людей. Отсортируйте массив. Результат выведите на консоль.
         /// </summary>
@@ -141,6 +150,7 @@
             Array.Sort(names);
             names.ToList().ForEach(name => Console.Write($"{name} "));
         }
+
         /// <summary>
         /// Реализуйте алгоритм сортировки массива пузырьком.
         /// </summary>
@@ -165,8 +175,10 @@
                     }
                 }
             }
+
             return numbers;
         }
+
         /// <summary>
         /// Создайте двумерный массив целых чисел. Выведите на консоль сумму всех элементов массива.
         /// </summary>
