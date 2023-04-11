@@ -7,7 +7,7 @@
         /// </summary>
         static void Main()
         {
-            Console.Write("Введите имя пользователя: ");
+            Console.Write("Please, enter a name: ");
             string userName = Console.ReadLine();
             Console.WriteLine($"Hello, {userName}");
         }
