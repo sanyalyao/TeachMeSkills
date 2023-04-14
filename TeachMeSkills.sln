@@ -5,11 +5,13 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "home_3", "home_3\home_3.csproj", "{C89F1AF7-5683-4202-AE6B-07336382A6DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "home_1", "home_1\home_1.csproj", "{AB9E2DE6-6084-4DDB-B3FB-2739298756A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "home_1", "home_1\home_1.csproj", "{AB9E2DE6-6084-4DDB-B3FB-2739298756A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "home_2", "home_2\home_2.csproj", "{602238E0-C98A-433A-9F30-8351FE82F0DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "home_2", "home_2\home_2.csproj", "{602238E0-C98A-433A-9F30-8351FE82F0DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "home_4", "home_4\home_4.csproj", "{7EE0FCC4-9DB4-4CE7-B755-2BEC3BD26F42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "home_4", "home_4\home_4.csproj", "{7EE0FCC4-9DB4-4CE7-B755-2BEC3BD26F42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "home_5", "home_5\home_5.csproj", "{37623518-0DB4-41AE-AE65-B92FCD263AF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7EE0FCC4-9DB4-4CE7-B755-2BEC3BD26F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EE0FCC4-9DB4-4CE7-B755-2BEC3BD26F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EE0FCC4-9DB4-4CE7-B755-2BEC3BD26F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37623518-0DB4-41AE-AE65-B92FCD263AF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37623518-0DB4-41AE-AE65-B92FCD263AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37623518-0DB4-41AE-AE65-B92FCD263AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37623518-0DB4-41AE-AE65-B92FCD263AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
