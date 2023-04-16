@@ -2,44 +2,44 @@
 {
     class Student
     {
-        public int id;
-        public string name;
-        public int age;
-        public string group;
-        public int mathMark;
-        public int physicalEducationMark;
-        public int biologyMark;
-        public int reward;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Group { get; set; }
+        public int MathMark { get; set; }
+        public int PhysicalEducationMark { get; set; }
+        public int BiologyMark { get; set; }
+        public int Reward { get; set; }
 
-        public Student(int id, string name, int age, string group, int mathMark, int physicalEducationMark, int biologyMark)
+        public Student(int id, string name, int age, /*string group,*/ int mathMark, int physicalEducationMark, int biologyMark)
         {
-            this.id = id;
-            this.name = name;
-            this.age = age;
-            this.group = group;
-            this.mathMark = mathMark;
-            this.physicalEducationMark = physicalEducationMark;
-            this.biologyMark = biologyMark;
+            this.Id = id;
+            this.Name = name;
+            this.Age = age;
+            //this.Group = "";
+            this.MathMark = mathMark;
+            this.PhysicalEducationMark = physicalEducationMark;
+            this.BiologyMark = biologyMark;
         }
 
         public void GetTheBestMathMark()
         {
-            Console.WriteLine($"{name}, Math mark: {mathMark}");
+            Console.WriteLine($"{Name}, Math mark: {MathMark}");
         }
 
         public void GetTheBestPhysicalEducationMark()
         {
-            Console.WriteLine($"{name}, Physical Education mark: {physicalEducationMark}");
+            Console.WriteLine($"{Name}, Physical Education mark: {PhysicalEducationMark}");
         }
 
         public void GetTheBestBiologyMark()
         {
-            Console.WriteLine($"{name}, Biology mark: {biologyMark}");
+            Console.WriteLine($"{Name}, Biology mark: {BiologyMark}");
         }
 
         public void GiveReward(int reward)
         {
-            this.reward = reward;
+            this.Reward = reward;
         }
     }
 }
