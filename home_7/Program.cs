@@ -6,21 +6,13 @@ namespace home_7
     {
         static void Main()
         {
-            Cleaner cleaner = new Cleaner();
-            Cook cook = new Cook();
-            Manager manager = new Manager();
+            Cleaner cleaner = new Cleaner("Igor", "cleaner");
+            Cook cook = new Cook("Sasha", "cook");
+            Manager manager = new Manager("Pasha", "manager");
 
             BaseWorker[] workers = new BaseWorker[] { cleaner, cook, manager};
 
-            OpenMcDonalds(workers);
-        }
-
-        static void OpenMcDonalds(BaseWorker[] workers)
-        {
-            foreach (BaseWorker worker in workers)
-            {
-                Console.WriteLine(worker.ToString());
-            }
+            new OpenRestaurant().OpenMcDonalds(workers);
         }
     }
 }
