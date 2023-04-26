@@ -11,12 +11,11 @@
         public int BiologyMark { get; set; }
         public int Reward { get; set; }
 
-        public Student(int id, string name, int age, /*string group,*/ int mathMark, int physicalEducationMark, int biologyMark)
+        public Student(int id, string name, int age, int mathMark, int physicalEducationMark, int biologyMark)
         {
             this.Id = id;
             this.Name = name;
             this.Age = age;
-            //this.Group = "";
             this.MathMark = mathMark;
             this.PhysicalEducationMark = physicalEducationMark;
             this.BiologyMark = biologyMark;
