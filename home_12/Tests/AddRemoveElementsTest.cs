@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -11,12 +12,12 @@ namespace home_12.Tests
         {
             driver.FindElement(By.LinkText("Add/Remove Elements")).Click();
 
-            WaitElement(By.CssSelector("button[onclick='addElement()']"));
+            WaitHelper.WaitElement(driver, By.CssSelector("button[onclick='addElement()']"));
 
             driver.FindElement(By.CssSelector("button[onclick='addElement()']")).Click();
             driver.FindElement(By.CssSelector("button[onclick='addElement()']")).Click();
 
-            WaitElements(By.ClassName("added-manually"), 2);
+            WaitHelper.WaitElement(driver, By.ClassName("added-manually"), 2);
 
             driver.FindElement(By.ClassName("added-manually")).Click();
 

@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -11,7 +12,7 @@ namespace home_12.Tests
         {
             driver.FindElement(By.LinkText("Checkboxes")).Click();
 
-            WaitElementWithTitle(By.TagName("h3"), "Checkboxes");
+            WaitHelper.WaitElementWithTitle(driver, By.TagName("h3"), "Checkboxes");
 
             IWebElement firstCheckbox = driver.FindElements(By.CssSelector("input[type='checkbox']"))[0];
             IWebElement secondCheckbox = driver.FindElements(By.CssSelector("input[type='checkbox']"))[1];
