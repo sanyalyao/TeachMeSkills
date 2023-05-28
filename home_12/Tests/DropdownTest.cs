@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -11,7 +12,7 @@ namespace home_12.Tests
         {
             driver.FindElement(By.LinkText("Dropdown")).Click();
 
-            WaitElementWithTitle(By.TagName("h3"), "Dropdown List");
+            WaitHelper.WaitElementWithTitle(driver, By.TagName("h3"), "Dropdown List");
 
             IWebElement list = driver.FindElement(By.Id("dropdown"));
 

@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -11,7 +12,7 @@ namespace home_12.Tests
         {
             driver.FindElement(By.LinkText("Typos")).Click();
 
-            WaitElementWithTitle(By.TagName("h3"), "Typos");
+            WaitHelper.WaitElementWithTitle(driver, By.TagName("h3"), "Typos");
 
             string text = driver.FindElements(By.TagName("p"))[1].Text;
             string[] mainText = new string[] { "Sometimes", "you'll", "see", "a", "typo", "other", "times", "you", "won't" };

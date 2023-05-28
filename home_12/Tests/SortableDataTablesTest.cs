@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Collections.Generic;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -20,7 +21,7 @@ namespace home_12.Tests
 
             driver.FindElement(By.LinkText("Sortable Data Tables")).Click();
 
-            WaitElementWithTitle(By.TagName("h3"), "Data Tables");
+            WaitHelper.WaitElementWithTitle(driver, By.TagName("h3"), "Data Tables");
 
             for (int j = 0; j <= 3; j++)
             {

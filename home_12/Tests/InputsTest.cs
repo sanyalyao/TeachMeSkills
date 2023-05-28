@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using home_12.Helpers;
 
 namespace home_12.Tests
 {
@@ -14,7 +15,7 @@ namespace home_12.Tests
         {
             driver.FindElement(By.LinkText("Inputs")).Click();
 
-            WaitElementWithTitle(By.TagName("h3"), "Inputs");
+            WaitHelper.WaitElementWithTitle(driver, By.TagName("h3"), "Inputs");
 
             IWebElement field = driver.FindElement(By.TagName("input"));
             Actions action = new Actions(driver);
