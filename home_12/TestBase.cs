@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using NUnit.Framework;
-using OpenQA.Selenium.Support.UI;
 using System;
 
 namespace home_12
