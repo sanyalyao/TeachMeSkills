@@ -2,6 +2,7 @@
 using home_15.Models;
 using NUnit.Framework;
 using home_15.Helpers;
+using NUnit.Allure.Attributes;
 
 namespace home_15
 {
@@ -9,34 +10,40 @@ namespace home_15
     {
         [Test]
         [Description("Create new account")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("Account")]
         public void CreateAccount()
         {
             Login();
 
             AccountModel newAccount = new CreationHelper().CreateAccount();
 
-            AccountPage.OpenAccountPage().CreateNewAccount(newAccount);
+            AccountsPage.OpenAccountsPage();
+            CreationNewAccountPage.CreateNewAccount(newAccount);
 
             Assert.AreEqual(newAccount, AccountPage.GetAccountDetails());
         }
 
         [Test]
         [Description("Edit old account")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("Account")]
         public void EditAccount()
         {
             Login();
+            AccountsPage.OpenAccountsPage();
 
             AccountModel oldAccount;
 
             try
             {
-                oldAccount = AccountPage.OpenAccountPage().TakeAccount(0).GetAccountDetails();
+                oldAccount = AccountsPage.TakeAccount(0).GetAccountDetails();
             }
             catch
             {
                 oldAccount = new CreationHelper().CreateAccount();
 
-                AccountPage.CreateNewAccount(oldAccount);
+                CreationNewAccountPage.CreateNewAccount(oldAccount);
             }
 
             AccountModel newAccount = new CreationHelper().CreateAccount();
@@ -48,19 +55,20 @@ namespace home_15
 
         [Test]
         [Description("Delete old account")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("Account")]
         public void DeleteAccount()
         {
             Login();
+            AccountsPage.OpenAccountsPage();
 
             AccountModel oldAccount;
             int countOfAccountsBefore;
 
-            AccountPage.OpenAccountPage();
-
             try
             {
-                countOfAccountsBefore = AccountPage.GetTableOfAccounts().Count;
-                oldAccount = AccountPage.TakeAccount(0).GetAccountDetails();
+                countOfAccountsBefore = AccountsPage.GetAccountsNames().Count;
+                oldAccount = AccountsPage.TakeAccount(0).GetAccountDetails();
 
                 AccountPage.DeleteAccount();
             }
@@ -68,18 +76,18 @@ namespace home_15
             {
                 oldAccount = new CreationHelper().CreateAccount();
 
-                AccountPage.CreateNewAccount(oldAccount);
-                AccountPage.OpenAccountPage();
+                CreationNewAccountPage.CreateNewAccount(oldAccount);
+                AccountsPage.OpenAccountsPage();
 
-                countOfAccountsBefore = AccountPage.GetTableOfAccounts().Count;
+                countOfAccountsBefore = AccountsPage.GetAccountsNames().Count;
 
-                AccountPage.TakeAccount(0).DeleteAccount();
+                AccountsPage.TakeAccount(0).DeleteAccount();
             }
 
-            int countOfAccountsAfter = AccountPage.GetTableOfAccounts().Count;
+            int countOfAccountsAfter = AccountsPage.GetAccountsNames().Count;
 
             Assert.AreEqual(countOfAccountsBefore - 1, countOfAccountsAfter);
-            Assert.IsFalse(AccountPage.DoesAccountNameExistInTable(oldAccount));
+            Assert.IsFalse(AccountsPage.DoesAccountNameExistInTable(oldAccount));
         }
     }
 }

@@ -11,5 +11,10 @@
             Username = username;
             Password = password;
         }
+
+        public override string ToString()
+        {
+            return $"Username: {Username}";
+        }
     }
 }

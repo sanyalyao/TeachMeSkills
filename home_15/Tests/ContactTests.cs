@@ -14,7 +14,8 @@ namespace home_15.Tests
 
             ContactModel newContact = new CreationHelper().CreateContact();
 
-            ContactPage.OpenContactPage().CreateNewContact(newContact);
+            ContactsPage.OpenContactsPage();
+            CreationNewContactPage.CreateNewContact(newContact);
 
             Assert.AreEqual(newContact, ContactPage.GetContactDetails());
         }
@@ -24,18 +25,19 @@ namespace home_15.Tests
         public void EditContact()
         {
             Login();
+            ContactsPage.OpenContactsPage();
 
             ContactModel oldContact;
 
             try
             {
-                oldContact = ContactPage.OpenContactPage().TakeContact(0).GetContactDetails();
+                oldContact = ContactsPage.TakeContact(0).GetContactDetails();
             }
             catch
             {
                 oldContact = new CreationHelper().CreateContact();
 
-                ContactPage.CreateNewContact(oldContact);
+                CreationNewContactPage.CreateNewContact(oldContact);
             }
 
             ContactModel newContact = new CreationHelper().CreateContact();
@@ -50,16 +52,15 @@ namespace home_15.Tests
         public void DeleteContact()
         {
             Login();
+            ContactsPage.OpenContactsPage();
 
             ContactModel oldContact;
             int countOfContactsBefore;
 
-            ContactPage.OpenContactPage();
-
             try
             {
-                countOfContactsBefore = ContactPage.GetTableOfContacts().Count;
-                oldContact = ContactPage.TakeContact(0).GetContactDetails();
+                countOfContactsBefore = ContactsPage.GetContactsNames().Count;
+                oldContact = ContactsPage.TakeContact(0).GetContactDetails();
 
                 ContactPage.DeleteContact();
             }
@@ -67,18 +68,18 @@ namespace home_15.Tests
             {
                 oldContact = new CreationHelper().CreateContact();
 
-                ContactPage.CreateNewContact(oldContact);
-                ContactPage.OpenContactPage();
+                CreationNewContactPage.CreateNewContact(oldContact);
+                ContactsPage.OpenContactsPage();
 
-                countOfContactsBefore = ContactPage.GetTableOfContacts().Count;
+                countOfContactsBefore = ContactsPage.GetContactsNames().Count;
 
-                ContactPage.TakeContact(0).DeleteContact();
+                ContactsPage.TakeContact(0).DeleteContact();
             }
 
-            int countOfContactsAfter = ContactPage.GetTableOfContacts().Count;
+            int countOfContactsAfter = ContactsPage.GetContactsNames().Count;
 
             Assert.AreEqual(countOfContactsBefore - 1, countOfContactsAfter);
-            Assert.IsFalse(ContactPage.DoesContactNameExistInTable(oldContact));
+            Assert.IsFalse(ContactsPage.DoesContactNameExistInTable(oldContact));
         }
     }
 }
