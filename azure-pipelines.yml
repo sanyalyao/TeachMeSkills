@@ -4,10 +4,10 @@
 # https://aka.ms/yaml
 
 trigger:
-- initial-azure-pipelines
+- master
 
 pool:
-  vmImage: 'MyAgent'
+  name: 'MyAgent'
 
 steps:
 - task: NuGetCommand@2
