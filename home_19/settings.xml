@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<TestRunParameters>
+		<Parameter name="baseURL" value="https://api.qase.io/v1" />
+		<Parameter name="token" value="bddb38147b165a4195470d62c93094d16a2ec9fa426312ded7feff40c1a5bdee" />
+	</TestRunParameters>
+</RunSettings>
