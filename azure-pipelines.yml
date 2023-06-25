@@ -7,7 +7,7 @@ trigger:
 - initial-azure-pipelines
 
 pool:
-  vmImage: 'AgentTest'
+  vmImage: 'MyAgent'
 
 steps:
 - task: NuGetCommand@2
