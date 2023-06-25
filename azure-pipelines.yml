@@ -14,7 +14,7 @@ steps:
   displayName: 'Restore nuget package for solution'
   inputs:
     command: 'restore'
-    restoreSolution: '$(solutiuon)'
+    restoreSolution: '$(solution)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Build solution'
