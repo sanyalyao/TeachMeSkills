@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'MyAgent'
+  vmImage: 'AgentTest'
 
 steps:
 - task: NuGetCommand@2
