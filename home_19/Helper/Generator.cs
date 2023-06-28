@@ -4,31 +4,28 @@ namespace home_19.Helper
 {
     public class Generator
     {
-        private Random random = new Random();
-        private string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-        public CreateProjectModel GenerateNewProject(int length)
+        public CreateProjectModel GenerateNewProject()
         {
             CreateProjectModel project = new CreateProjectModel()
             {
-                Title = new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray()),
-                Code = new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray()),
+                Title = Faker.Company.Name(),
+                Code = Faker.RandomNumber.Next().ToString(),
                 Access = "none"
             };
 
             return project;
         }
 
-        public TestCase GenerateTestCase(int lengthOfTitle, bool needId = false)
+        public TestCase GenerateTestCase(bool needId = false)
         {
             TestCase testCase = new TestCase()
             {
-                Title = new string(Enumerable.Repeat(chars, lengthOfTitle).Select(s => s[random.Next(s.Length)]).ToArray()),
+                Title = Faker.Company.Name(),
             };
 
             if (needId)
             {
-                testCase.Id = random.Next(99, 999999);
+                testCase.Id = Faker.RandomNumber.Next();
             }
 
             return testCase;
