@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'MyAgent'
+  name:  'MyAgent'
 
 steps:
 - task: NuGetToolInstaller@1
