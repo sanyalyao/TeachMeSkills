@@ -10,6 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="C:\Users\qwert\.nuget\packages\allure.net.commons\2.9.5-preview.1\contentFiles\any\netstandard2.0\allureConfig.Template.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="allureConfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="allureConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Allure.Net.Commons" Version="2.9.5-preview.1" />
+    <PackageReference Include="Allure.NUnit" Version="2.9.5-preview.1" />
     <PackageReference Include="Faker.Net" Version="2.0.154" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

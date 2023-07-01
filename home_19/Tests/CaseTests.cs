@@ -1,5 +1,6 @@
 ﻿using home_19.BusinessObject.Models;
 using home_19.Helper;
+using NUnit.Allure.Attributes;
 using NUnit.Framework;
 using RestSharp;
 using System.Net;
@@ -9,6 +10,9 @@ namespace home_19.Tests
     public class CaseTests : BaseTest
     {
         [Test]
+        [Description("Get all Test Cases")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GetAllTestCases")]
         public void GetAllTestCases()
         {
             List<TestCase> testCases = apiTestCaseSteps.GetAllTestCasesSteps(GetProject(0).Code);
@@ -19,6 +23,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Create a new Test Case")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("CreateANewTestCase")]
         public void CreateANewTestCase()
         {
             TestCase testCase = new Generator().GenerateTestCase();
@@ -28,6 +35,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Get specific Test Case")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GetSpecificTestCase")]
         public void GetSpecificTestCase()
         {
             TestCase testCase = GetTestCase(0, 2);
@@ -37,6 +47,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Delete Test Case")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("DeleteTestCase")]
         public void DeleteTestCase()
         {
             RestResponse response = testCaseService.DeleteTestCase(GetProject(0).Code, GetTestCase(0, 0).Id);
@@ -45,6 +58,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Update Test Case")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("UpdateTestCase")]
         public void UpdateTestCase()
         {
             TestCase testCaseWithNewParameters = new TestCase()
@@ -59,6 +75,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Create Test Cases in Bulk")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("CreateTestCasesInBulk")]
         public void CreateTestCasesInBulk()
         {
             List<TestCase> listOfTestCases = new List<TestCase>
