@@ -10,6 +10,10 @@ pool:
   vmImage: 'MyAgent'
 
 steps:
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: '6.x'
+    
 - task: NuGetCommand@2
   displayName: 'Restore nuget package for solution'
   inputs:
