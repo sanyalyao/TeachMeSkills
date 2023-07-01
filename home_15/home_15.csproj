@@ -39,6 +39,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Allure.Net.Commons, Version=2.9.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Allure.Net.Commons.2.9.5-preview.1\lib\net45\Allure.Net.Commons.dll</HintPath>
