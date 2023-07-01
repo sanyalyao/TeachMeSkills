@@ -27,7 +27,7 @@ namespace home_19.Tests
         [Test]
         public void CreateProject()
         {
-            var projectResponse = projectService.CreateProject(new Generator().GenerateNewProject(8));
+            var projectResponse = projectService.CreateProject(new Generator().GenerateNewProject());
 
             Assert.IsTrue(projectResponse.StatusCode.Equals(HttpStatusCode.OK));
         }

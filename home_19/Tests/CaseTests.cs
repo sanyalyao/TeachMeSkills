@@ -21,7 +21,7 @@ namespace home_19.Tests
         [Test]
         public void CreateANewTestCase()
         {
-            TestCase testCase = new Generator().GenerateTestCase(6);
+            TestCase testCase = new Generator().GenerateTestCase();
             testCase.Description = "erwogopwerg";
 
             apiTestCaseSteps.CreateTestCaseSteps(GetProject(0).Code, testCase);
@@ -63,9 +63,9 @@ namespace home_19.Tests
         {
             List<TestCase> listOfTestCases = new List<TestCase>
             {
-                new Generator().GenerateTestCase(5, true),
-                new Generator().GenerateTestCase(8, true),
-                new Generator().GenerateTestCase(10, true)
+                new Generator().GenerateTestCase(true),
+                new Generator().GenerateTestCase(true),
+                new Generator().GenerateTestCase(true)
             };
 
             var testCases = new Generator().GenerateTestCasesInBulk(listOfTestCases);
