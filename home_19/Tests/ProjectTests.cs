@@ -3,12 +3,16 @@ using home_19.BusinessObject.Models;
 using NUnit.Framework;
 using RestSharp;
 using System.Net;
+using NUnit.Allure.Attributes;
 
 namespace home_19.Tests
 {
     public class ProjectTests : BaseTest
     {
         [Test]
+        [Description("Get project by code")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GetProjectByCode")]
         public void GetProjectByCode()
         {
             var response = projectService.GetProjectByCode(GetProject(0).Code);
@@ -17,6 +21,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Get project by code with ResponseModel")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GetProjectByCode_ResponseModel")]
         public void GetProjectByCode_ResponseModel()
         {
             var project = apiProjectSteps.GetProjectByCodeSteps(GetProject(0).Code);
@@ -25,6 +32,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Create project")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("CreateProject")]
         public void CreateProject()
         {
             var projectResponse = projectService.CreateProject(new Generator().GenerateNewProject());
@@ -33,6 +43,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Get all projects")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GetAllProjects")]
         public void GetAllProjects()
         {
             List<Project> projects = apiProjectSteps.GetProjectsSteps();
@@ -41,6 +54,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Delete project by code")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("DeleteProjectByCode")]
         public void DeleteProjectByCode()
         {
             RestResponse response = projectService.DeleteProjectByCode(GetProject(0).Code);
@@ -49,6 +65,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Grant access to project by code")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("GrantAccessToProjectByCode")]
         public void GrantAccessToProjectByCode()
         {
             MemberModel member = new MemberModel()
@@ -62,6 +81,9 @@ namespace home_19.Tests
         }
 
         [Test]
+        [Description("Revoke access to project by code")]
+        [AllureOwner("Aleksandr")]
+        [AllureTag("RevokeAccessToProjectByCode")]
         public void RevokeAccessToProjectByCode()
         {
             MemberModel member = new MemberModel()
