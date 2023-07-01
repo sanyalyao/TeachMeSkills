@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "home_15", "home_15\home_15.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "home_19", "home_19\home_19.csproj", "{B504FA91-474C-4E22-835A-3ED810BAEA33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dimploma", "Dimploma\Dimploma.csproj", "{756D6B1B-DDC9-4A95-8712-B1E984FAF3B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diploma", "Diploma\Diploma.csproj", "{756D6B1B-DDC9-4A95-8712-B1E984FAF3B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
