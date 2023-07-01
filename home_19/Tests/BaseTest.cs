@@ -19,7 +19,7 @@ namespace home_19.Tests
         [OneTimeSetUp]
         public void InitialService()
         {
-            AllureLifecycle.Instance.CleanupResultDirectory();
+            //AllureLifecycle.Instance.CleanupResultDirectory();
 
             testCaseService = new TestCaseService(apiClient);
             apiTestCaseSteps = new ApiTestCaseSteps(testCaseService);
